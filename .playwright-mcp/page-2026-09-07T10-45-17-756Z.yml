@@ -1,0 +1,241 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - img "DSH Desktop" [ref=e4]
+      - generic [ref=e5]: DSH Desktop 社区桌面端 · 非官方
+      - navigation [ref=e6]:
+        - link "简体中文" [ref=e7] [cursor=pointer]:
+          - /url: ./
+        - link "English" [ref=e8] [cursor=pointer]:
+          - /url: en.html
+        - link "日本語" [ref=e9] [cursor=pointer]:
+          - /url: ja.html
+        - link "Español" [ref=e10] [cursor=pointer]:
+          - /url: es.html
+        - link "GitHub" [ref=e11] [cursor=pointer]:
+          - /url: https://github.com/TeacupDev-2006/dsh-desktop
+  - generic [ref=e13]:
+    - img "DSH Desktop 图标" [ref=e14]
+    - heading "DSH Desktop" [level=1] [ref=e15]
+    - paragraph [ref=e16]:
+      - text: 为 DeepSeek Harness（
+      - code [ref=e17]: dsh
+      - text: ）打造的社区 Windows 桌面端：内置 Node.js 运行时，零依赖、一键安装，预装 11 个社区插件。
+    - generic [ref=e18]:
+      - generic [ref=e19]: v1.0.0
+      - generic [ref=e20]: Windows 10/11 x64
+      - generic [ref=e21]: MIT License
+      - generic [ref=e22]: 无需管理员权限
+      - generic [ref=e23]: 数据全本机
+    - generic [ref=e24]:
+      - link "下载完整版（193 MB）" [ref=e25] [cursor=pointer]:
+        - /url: https://github.com/TeacupDev-2006/dsh-desktop/releases/download/v1.0.0/DSH-Desktop-Setup-1.0.0-full.exe
+      - link "下载精简版（185 MB）" [ref=e26] [cursor=pointer]:
+        - /url: https://github.com/TeacupDev-2006/dsh-desktop/releases/download/v1.0.0-lite/DSH-Desktop-Setup-1.0.0-lite.exe
+      - link "源码仓库" [ref=e27] [cursor=pointer]:
+        - /url: https://github.com/TeacupDev-2006/dsh-desktop
+  - generic [ref=e28]:
+    - figure "DSH Desktop 运行实拍（Windows 11 虚拟机）：标题栏与任务栏为原创 DSH 图标，界面即 DSH Web UI" [ref=e30]:
+      - img "DSH Desktop 运行截图：DSH Web UI 与控制室" [ref=e31]
+    - generic [ref=e33]:
+      - heading "这是什么？" [level=2] [ref=e34]
+      - paragraph [ref=e35]: 把 DeepSeek Harness 从「命令行工具」变成「双击即用的桌面应用」。
+      - generic [ref=e36]:
+        - generic [ref=e37]:
+          - generic [ref=e38]: 📦
+          - heading "运行时完全自包含" [level=3] [ref=e39]
+          - paragraph [ref=e40]: 内置便携 Node.js 22 LTS、dsh 引擎与 pnpm。你的电脑不需要安装 Node.js 或任何依赖，解压即用。
+        - generic [ref=e41]:
+          - generic [ref=e42]: 🖱️
+          - heading "一键安装" [level=3] [ref=e43]
+          - paragraph [ref=e44]: NSIS 安装包装到用户目录，无需管理员权限；首次启动自动解压运行时（约 1–3 分钟，仅一次），之后每次启动约 8 秒。
+        - generic [ref=e45]:
+          - generic [ref=e46]: 🧩
+          - heading "预装 11 个社区插件" [level=3] [ref=e47]
+          - paragraph [ref=e48]: 项目工作台、长期记忆、插件市场、视觉桥接、免 key 联网搜索、多智能体团队、上下文统计、手机扫码、终端 UI 等，装完即有。
+        - generic [ref=e49]:
+          - generic [ref=e50]: 🫥
+          - heading "托盘常驻" [level=3] [ref=e51]
+          - paragraph [ref=e52]: 关闭窗口即最小化到托盘。托盘菜单可重启引擎、打开 TUI 终端、直达工作区与日志目录。
+        - generic [ref=e53]:
+          - generic [ref=e54]: 🔒
+          - heading "数据全在本机" [level=3] [ref=e55]
+          - paragraph [ref=e56]:
+            - text: API Key 与所有数据保存在本机
+            - code [ref=e57]: "%APPDATA%\\DSH Desktop\\"
+            - text: ，不经过任何第三方服务器；Agent 文件操作限定在你选择的工作区内。
+        - generic [ref=e58]:
+          - generic [ref=e59]: 🎨
+          - heading "原创品牌设计" [level=3] [ref=e60]
+          - paragraph [ref=e61]: "遵循 DSH 官方品牌规范：使用生态推荐的 DSH 缩写与原创 \"DSH_\" 字标（DeepSeek 品牌蓝 #4D6BFE），不使用官方 logo。"
+    - generic [ref=e62]:
+      - heading "下载" [level=2] [ref=e63]
+      - paragraph [ref=e64]: 两个版本内核完全相同（同一壳、同一运行时），区别只在预装插件。
+      - generic [ref=e65]:
+        - generic [ref=e66]:
+          - heading "完整版 v1.0.0 · 193 MB" [level=3] [ref=e67]
+          - list [ref=e68]:
+            - listitem [ref=e69]: 预装 11 个社区插件，开箱即用
+            - listitem [ref=e70]: 含应用内「插件市场」，可继续在线安装
+            - listitem [ref=e71]: 含 TUI 终端、手机扫码、长期记忆等全部能力
+          - link "下载完整版" [ref=e72] [cursor=pointer]:
+            - /url: https://github.com/TeacupDev-2006/dsh-desktop/releases/download/v1.0.0/DSH-Desktop-Setup-1.0.0-full.exe
+        - generic [ref=e73]:
+          - heading "精简版 v1.0.0-lite · 185 MB" [level=3] [ref=e74]
+          - list [ref=e75]:
+            - listitem [ref=e76]: 仅引擎，无预装插件，更轻量
+            - listitem [ref=e77]: 用内置 CLI 一条命令安装任意插件
+            - listitem [ref=e78]:
+              - text: 装上
+              - code [ref=e79]: "@dsh-market/plugin"
+              - text: 即获得图形化插件市场
+          - link "下载精简版" [ref=e80] [cursor=pointer]:
+            - /url: https://github.com/TeacupDev-2006/dsh-desktop/releases/download/v1.0.0-lite/DSH-Desktop-Setup-1.0.0-lite.exe
+      - paragraph [ref=e81]:
+        - text: 也可以到
+        - link "Releases 页面" [ref=e82] [cursor=pointer]:
+          - /url: https://github.com/TeacupDev-2006/dsh-desktop/releases
+        - text: 查看全部版本与更新说明。
+    - generic [ref=e83]:
+      - heading "三步上手" [level=2] [ref=e84]
+      - paragraph [ref=e85]: 全程无需命令行（精简版装插件除外）。
+      - list [ref=e87]:
+        - listitem [ref=e88]:
+          - text: 安装：双击安装包，自动装入用户目录（
+          - code [ref=e89]: "%LOCALAPPDATA%\\Programs"
+          - text: ），桌面与开始菜单创建「DSH Desktop」快捷方式。
+        - listitem [ref=e90]:
+          - text: 首次配置：启动后粘贴 DeepSeek API Key（在
+          - link "platform.deepseek.com" [ref=e91] [cursor=pointer]:
+            - /url: https://platform.deepseek.com/
+          - text: 获取），选择或保持默认工作区目录，点击「启动」。
+        - listitem [ref=e92]: 开始使用：Web UI 出现后即可对话、写项目、跑任务。关闭窗口只是最小化到托盘，引擎保持运行；彻底退出请用托盘菜单。
+      - paragraph [ref=e93]:
+        - text: 精简版安装插件：在命令行执行
+        - code [ref=e94]: "\"%APPDATA%\\DSH Desktop\\runtime\\bin\\dsh.cmd\" plugin --profile web add @dsh-market/plugin"
+        - text: ，重启应用即获得插件市场；更多插件说明见
+        - link "精简版 Release" [ref=e95] [cursor=pointer]:
+          - /url: https://github.com/TeacupDev-2006/dsh-desktop/releases/tag/v1.0.0-lite
+        - text: 。
+    - generic [ref=e96]:
+      - heading "预装插件一览（完整版）" [level=2] [ref=e97]
+      - paragraph [ref=e98]:
+        - text: 构建期逐个安装并冒烟验证；结果以
+        - code [ref=e99]: vendor/plugin-report.json
+        - text: 为准。
+      - table [ref=e101]:
+        - rowgroup [ref=e102]:
+          - row [ref=e103]:
+            - columnheader "插件" [ref=e104]
+            - columnheader "能力" [ref=e105]
+            - columnheader "状态" [ref=e106]
+          - row [ref=e107]:
+            - cell [ref=e108]:
+              - code [ref=e109]: dsh-worktable
+              - text: 0.3.0
+            - cell "项目工作台：侧边栏抽屉 + 可停靠分屏 + 控制室看板" [ref=e110]
+            - cell "✓ 已激活" [ref=e111]
+          - row [ref=e112]:
+            - cell [ref=e113]:
+              - code [ref=e114]: dsh-memory-plugin
+            - cell [ref=e115]:
+              - text: 跨会话长期记忆增强（
+              - code [ref=e116]: memory_*
+              - text: 工具）
+            - cell "✓ 已激活" [ref=e117]
+          - row [ref=e118]:
+            - cell [ref=e119]:
+              - code [ref=e120]: "@dsh-market/plugin"
+            - cell "侧边栏插件市场，在线安装更多插件" [ref=e121]
+            - cell "✓ 已激活" [ref=e122]
+          - row [ref=e123]:
+            - cell [ref=e124]:
+              - code [ref=e125]: "@liustack/modlens"
+            - cell "视觉桥接" [ref=e126]
+            - cell "✓ 已激活" [ref=e127]
+          - row [ref=e128]:
+            - cell [ref=e129]:
+              - code [ref=e130]: "@liustack/modsearch"
+            - cell "免 key 联网搜索" [ref=e131]
+            - cell "✓ 已激活" [ref=e132]
+          - row [ref=e133]:
+            - cell [ref=e134]:
+              - code [ref=e135]: "@nanmicoder/dsh-agent-teams"
+            - cell "多智能体团队协作" [ref=e136]
+            - cell "⊘ 已安装未激活 *" [ref=e137]
+          - row [ref=e138]:
+            - cell [ref=e139]:
+              - code [ref=e140]: dsh-context
+            - cell "上下文统计面板" [ref=e141]
+            - cell "✓ 已激活" [ref=e142]
+          - row [ref=e143]:
+            - cell [ref=e144]:
+              - code [ref=e145]: dsh-pocket
+            - cell "手机扫码访问（局域网 + PIN 保护）" [ref=e146]
+            - cell "✓ 已激活" [ref=e147]
+          - row [ref=e148]:
+            - cell [ref=e149]:
+              - code [ref=e150]: dsh-tui
+            - cell "全屏终端 UI（托盘「TUI 终端」入口）" [ref=e151]
+            - cell "✓ 已激活" [ref=e152]
+          - row [ref=e153]:
+            - cell [ref=e154]:
+              - code [ref=e155]: archify
+            - cell "仓库架构图生成" [ref=e156]
+            - cell "⊘ 已安装未激活 *" [ref=e157]
+          - row [ref=e158]:
+            - cell [ref=e159]:
+              - code [ref=e160]: aegis
+            - cell "软件工程方法论" [ref=e161]
+            - cell "⊘ 已安装未激活 *" [ref=e162]
+      - paragraph [ref=e163]:
+        - text: "* 实测这三个插件与内置 dsh 0.1.2-rc.1 存在 API 兼容问题（会导致引擎启动失败），故默认不激活；文件已就位，可在应用内按需启用，启用方法见"
+        - link "仓库 README" [ref=e164] [cursor=pointer]:
+          - /url: https://github.com/TeacupDev-2006/dsh-desktop#readme
+        - text: 。
+    - generic [ref=e165]:
+      - heading "架构一览" [level=2] [ref=e166]
+      - paragraph [ref=e167]: 桌面壳 + 内置引擎，进程边界清晰，卸载干净。
+      - generic [ref=e168]: ┌─ Electron 窗口 ───────── 加载 http://127.0.0.1:<port>（DSH Web UI） │ · dsh-worktable：侧边栏抽屉 + 可停靠分屏 + 控制室看板 │ · @dsh-market/plugin：插件市场（可继续在线装插件） ├─ Electron 主进程 ─────── 生命周期 / 托盘 / 首启引导 / 日志 │ └─ 子进程：runtime\bin\dsh-web.cmd（构建期生成的启动器） └─ 内置引擎 ────────────── 便携 Node 22 LTS + @deepseek-ai/dsh + pnpm └─ 数据目录 %APPDATA%\DSH Desktop\（首启自解压 vendor.zip）
+      - generic [ref=e169]: 安全设计：引擎只监听本机环回地址（127.0.0.1）并带访问令牌；外部链接一律跳系统浏览器打开；子进程调用全部使用白名单路径校验。
+    - generic [ref=e170]:
+      - heading "常见问题" [level=2] [ref=e171]
+      - paragraph [ref=e172]:
+        - text: 没找到答案？去
+        - link "Issues" [ref=e173] [cursor=pointer]:
+          - /url: https://github.com/TeacupDev-2006/dsh-desktop/issues
+        - text: 提问。
+      - group [ref=e174]:
+        - generic "需要先安装 Node.js 吗？" [ref=e175] [cursor=pointer]
+      - group [ref=e176]:
+        - generic "完整版和精简版怎么选？" [ref=e177] [cursor=pointer]
+      - group [ref=e178]:
+        - generic "API Key 存在哪里？安全吗？" [ref=e179] [cursor=pointer]
+      - group [ref=e180]:
+        - generic "为什么 archify / aegis / agent-teams 默认没启用？" [ref=e181] [cursor=pointer]
+      - group [ref=e182]:
+        - generic "如何彻底卸载？" [ref=e183] [cursor=pointer]
+      - group [ref=e184]:
+        - generic "这是 DeepSeek 官方的应用吗？" [ref=e185] [cursor=pointer]
+  - contentinfo [ref=e186]:
+    - generic [ref=e187]:
+      - generic [ref=e188]:
+        - text: 语言 / Language：
+        - link "简体中文" [ref=e189] [cursor=pointer]:
+          - /url: ./
+        - text: ·
+        - link "English" [ref=e190] [cursor=pointer]:
+          - /url: en.html
+        - text: ·
+        - link "日本語" [ref=e191] [cursor=pointer]:
+          - /url: ja.html
+        - text: ·
+        - link "Español" [ref=e192] [cursor=pointer]:
+          - /url: es.html
+      - generic [ref=e193]:
+        - text: MIT License · DeepSeek Harness（DSH）与各插件版权归其各自作者所有 · 本项目为独立社区作品，与 DeepSeek 官方无隶属关系 ·
+        - link "GitHub" [ref=e194] [cursor=pointer]:
+          - /url: https://github.com/TeacupDev-2006/dsh-desktop
+        - text: ·
+        - link "Releases" [ref=e195] [cursor=pointer]:
+          - /url: https://github.com/TeacupDev-2006/dsh-desktop/releases

@@ -299,6 +299,41 @@ function cleanProfileLinkDir() {
     fs.rmSync(linkDir, { recursive: true, force: true });
     log('已清理 profile 链接目录（由引擎启动时重建）');
   }
+  // .dsh-module-fallback 内是 dsh 管理的模块代理链接；若因复制/迁移变成真实目录，
+  // dsh 启动自检会直接拒绝（exists and is not a symlink）——一并清掉让其重建。
+  const profilesDir = path.join(DSH_HOME, 'profiles');
+  if (exists(profilesDir)) {
+    for (const name of fs.readdirSync(profilesDir)) {
+      const fallback = path.join(profilesDir, name, '.dsh-module-fallback');
+      if (exists(fallback)) {
+        fs.rmSync(fallback, { recursive: true, force: true });
+        log(`已清理 profile ${name} 的模块代理目录（由引擎重建）`);
+      }
+    }
+  }
+}
+
+// 自愈：清理已知与内置 dsh 不兼容的插件激活配置行（如 archify/aegis/agent-teams，
+// 激活会导致引擎启动崩溃）。数据目录可能来自旧版本构建，启动前兜底清洗一次。
+function sanitizeActivationRows() {
+  const patchPath = path.join(DSH_HOME, 'profiles', 'web', 'cordis.patch.yml');
+  if (!exists(patchPath)) return;
+  const bad = /archify|aegis|agent-teams/i;
+  const lines = fs.readFileSync(patchPath, 'utf8').split(/\r?\n/);
+  const kept = [];
+  let removed = 0;
+  for (let i = 0; i < lines.length; i++) {
+    if (/^\s*-\s*id:/i.test(lines[i]) && i + 1 < lines.length && /^\s*name:/i.test(lines[i + 1]) && bad.test(lines[i + 1])) {
+      removed++;
+      i++; // 跳过成对的 name 行
+      continue;
+    }
+    kept.push(lines[i]);
+  }
+  if (removed > 0) {
+    fs.writeFileSync(patchPath, kept.join('\n'));
+    log(`已清理不兼容插件激活行 ${removed} 组（archify/aegis/agent-teams）`);
+  }
 }
 
 async function startEngine() {
@@ -309,6 +344,7 @@ async function startEngine() {
   engineUrl = null;
   try {
     cleanProfileLinkDir();
+    sanitizeActivationRows();
     const settings = loadSettings();
     const workspace = settings.workspace || defaultWorkspace();
     const port = await findFreePort(3080);
@@ -481,7 +517,21 @@ ipcMain.handle('welcome:open-external', (_e, url) => {
     if (u.protocol === 'https:') shell.openExternal(u.href);
   } catch { /* 忽略非法链接 */ }
 });
-ipcMain.handle('error:init', () => ({ detail: lastErrorDetail, logTail: ringLog }));
+ipcMain.handle('error:init', () => {
+  // 环形缓冲只含本次启动尝试的输出；失败 early-return 时可能是空的。
+  // 兜底读取最新一份引擎日志文件的尾部，保证错误窗口始终有可诊断的信息。
+  let logTail = ringLog;
+  if (!logTail.trim()) {
+    try {
+      const latest = fs.readdirSync(LOGS_DIR)
+        .filter((f) => /^engine-.*\.log$/.test(f))
+        .map((f) => ({ f, t: fs.statSync(path.join(LOGS_DIR, f)).mtimeMs }))
+        .sort((a, b) => b.t - a.t)[0];
+      if (latest) logTail = fs.readFileSync(path.join(LOGS_DIR, latest.f), 'utf8').slice(-6000);
+    } catch { /* 无日志可读 */ }
+  }
+  return { detail: lastErrorDetail, logTail };
+});
 ipcMain.handle('error:restart', () => {
   if (errorWin && !errorWin.isDestroyed()) errorWin.close();
   restartEngine();

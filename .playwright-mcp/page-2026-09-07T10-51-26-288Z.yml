@@ -1,0 +1,28 @@
+- generic [ref=f1e2]:
+  - generic [ref=f1e3]:
+    - img "DSH" [ref=f1e4]
+    - heading "欢迎使用 DSH Desktop" [level=1] [ref=f1e5]
+  - paragraph [ref=f1e6]: 首次配置只需 30 秒 · 全部数据保存在本机
+  - separator [ref=f1e7]
+  - generic [ref=f1e8]: DeepSeek API Key 必填
+  - generic [ref=f1e9]:
+    - textbox "sk-…" [ref=f1e10]
+    - button "显示" [ref=f1e11] [cursor=pointer]
+  - generic [ref=f1e12]:
+    - text: 仅保存在本机
+    - code [ref=f1e13]
+    - text: ，用于驱动模型与联网搜索。 可在
+    - link "platform.deepseek.com" [ref=f1e14] [cursor=pointer]:
+      - /url: "#"
+    - text: 获取。
+  - generic [ref=f1e15]: 工作区目录 Agent 的工作文件夹
+  - generic [ref=f1e16]:
+    - textbox [ref=f1e17]
+    - button "浏览…" [ref=f1e18] [cursor=pointer]
+  - generic [ref=f1e19]: 会话中创建的文件与执行的命令都限制在该目录内。
+  - button "启动 DSH Desktop" [ref=f1e20] [cursor=pointer]
+  - generic [ref=f1e22]: 暂时没有 API Key？先跳过，稍后在设置中填写
+  - generic [ref=f1e23]:
+    - generic [ref=f1e24]: DSH Desktop v1.0.0 · 社区作品，与 DeepSeek 官方无关
+    - link "GitHub" [ref=f1e25] [cursor=pointer]:
+      - /url: "#"

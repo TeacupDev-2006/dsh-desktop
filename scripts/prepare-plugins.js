@@ -188,8 +188,9 @@ function ensureTuiShim() {
   fs.mkdirSync(binDir, { recursive: true });
   fs.writeFileSync(
     path.join(binDir, 'dsh-tui.cmd'),
+    // cmd.exe parses this file as GBK: keep the comment ASCII-only
     `@echo off\r\n` +
-    `rem dsh-tui 垫片（构建期生成，勿手改）：连接运行中的 dsh web 全屏终端 UI\r\n` +
+    `rem dsh-tui shim (generated at build time). Do not edit.\r\n` +
     `if not defined DSH_URL set "DSH_URL=http://127.0.0.1:3080"\r\n` +
     `if not defined DSH_HOME set "DSH_HOME=%USERPROFILE%\\.dsh"\r\n` +
     `"%~dp0..\\node\\node.exe" "%DSH_HOME%\\profiles\\web\\node_modules\\dsh-tui\\bin\\tui.js" %*\r\n`

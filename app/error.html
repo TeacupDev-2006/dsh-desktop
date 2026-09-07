@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<title>DSH Desktop · 引擎异常</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: #0d1428; color: #dfe7ff;
+    font-family: "Segoe UI", "Microsoft YaHei", sans-serif; }
+  body { display: flex; align-items: center; justify-content: center; }
+  .card { width: 620px; background: #131c38; border: 1px solid #26325c; border-radius: 16px; padding: 30px 34px; }
+  h1 { font-size: 17px; margin: 0 0 8px; }
+  p.sub { margin: 0 0 16px; color: #8fa0c9; font-size: 13px; line-height: 1.7; }
+  pre { max-height: 220px; overflow: auto; background: #0d1428; border: 1px solid #26325c;
+    border-radius: 10px; padding: 12px 14px; font-size: 12px; color: #a8b6dd; white-space: pre-wrap; }
+  .row { display: flex; gap: 10px; margin-top: 18px; }
+  button { padding: 10px 18px; border-radius: 9px; border: 1px solid #2c3a6e;
+    background: #1b2547; color: #dfe7ff; font-size: 13px; cursor: pointer; }
+  button:hover { border-color: #4d6bfe; }
+  .primary { background: #4d6bfe; border: none; color: #fff; font-weight: 600; }
+  .primary:hover { background: #5d79ff; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>引擎启动失败或意外退出</h1>
+    <p class="sub" id="detail">DSH Desktop 引擎未能正常启动。可尝试重启引擎；若反复失败，请查看日志中的错误详情。</p>
+    <pre id="log">（暂无日志）</pre>
+    <div class="row">
+      <button class="primary" id="restart">重启引擎</button>
+      <button id="logs">打开日志目录</button>
+      <button id="quit">退出</button>
+    </div>
+  </div>
+  <script>
+    const { dsh } = window;
+    const $ = (id) => document.getElementById(id);
+    window.addEventListener('DOMContentLoaded', async () => {
+      const info = await dsh.errorInit();
+      if (info && info.detail) $('detail').textContent = info.detail;
+      if (info && info.logTail) $('log').textContent = info.logTail;
+      $('restart').addEventListener('click', () => dsh.errorRestart());
+      $('logs').addEventListener('click', () => dsh.errorOpenLogs());
+      $('quit').addEventListener('click', () => window.close());
+    });
+  </script>
+</body>
+</html>

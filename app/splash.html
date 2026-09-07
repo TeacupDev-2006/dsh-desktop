@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<title>DSH Desktop</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #0d1428; color: #dfe7ff;
+    font-family: "Segoe UI", "Microsoft YaHei", sans-serif; overflow: hidden; user-select: none; }
+  body { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px; }
+  .mark { width: 88px; height: 88px; border-radius: 22px;
+    background: linear-gradient(135deg, #5e7aff, #3d52e8);
+    display: flex; align-items: center; justify-content: center; }
+  .mark span { color: #fff; font-size: 44px; font-weight: 700; letter-spacing: 2px; transform: translateY(-3px); }
+  h1 { font-size: 17px; font-weight: 600; margin: 0; color: #eaf0ff; }
+  .status { font-size: 13px; color: #8fa0c9; min-height: 18px; }
+  .bar { width: 220px; height: 4px; border-radius: 2px; background: #1b2547; overflow: hidden; }
+  .bar i { display: block; width: 40%; height: 100%; border-radius: 2px;
+    background: linear-gradient(90deg, #4d6bfe, #7ea2ff); animation: slide 1.2s ease-in-out infinite; }
+  @keyframes slide { 0% { transform: translateX(-100%); } 100% { transform: translateX(350%); } }
+</style>
+</head>
+<body>
+  <div class="mark"><span>&gt;_</span></div>
+  <h1>DSH Desktop</h1>
+  <div class="bar"><i></i></div>
+  <div class="status" id="status">正在启动…</div>
+  <script>
+    const { splashSetStatus } = window.dsh;
+    splashSetStatus((t) => { document.getElementById('status').textContent = t; });
+  </script>
+</body>
+</html>

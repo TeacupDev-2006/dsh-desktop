@@ -1,0 +1,62 @@
+{
+  "name": "deepseek-harness-desktop",
+  "version": "1.0.0",
+  "description": "DSH Desktop — 为 DeepSeek Harness 打造的社区桌面端（非官方），内置 Node 运行时，一键安装，预装社区插件",
+  "main": "app/main.js",
+  "author": "DeepSeek Harness Desktop Contributors",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "prepare:engine": "node scripts/prepare-engine.js",
+    "prepare:plugins": "node scripts/prepare-plugins.js",
+    "prepare:icon": "node scripts/make-icon.js",
+    "pack:vendor": "node scripts/pack-vendor.js",
+    "smoke": "node scripts/smoke-engine.js",
+    "dist": "npm run pack:vendor && electron-builder --win nsis",
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^38.2.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.deepseek.harness.desktop",
+    "productName": "DSH Desktop",
+    "directories": {
+      "output": "dist",
+      "buildResources": "resources"
+    },
+    "files": [
+      "app/**/*",
+      "resources/icon.png",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "vendor.zip",
+        "to": "vendor.zip"
+      }
+    ],
+    "asar": true,
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "resources/icon.ico"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "DSH Desktop",
+      "deleteAppDataOnUninstall": false
+    }
+  }
+}

@@ -15,6 +15,15 @@
      └─ 数据目录 %APPDATA%\DSH Desktop\dsh-home（首启自解压 vendor.zip）
 ```
 
+## 下载
+
+| 版本 | 安装包 | 说明 |
+| --- | --- | --- |
+| 完整版 | [DSH-Desktop-Setup-1.0.0-full.exe](https://github.com/TeacupDev-2006/dsh-desktop/releases/download/v1.0.0/DSH-Desktop-Setup-1.0.0-full.exe) | 预装 11 个社区插件，开箱即用（约 193 MB） |
+| 精简版 | [DSH-Desktop-Setup-1.0.0-lite.exe](https://github.com/TeacupDev-2006/dsh-desktop/releases/download/v1.0.0-lite/DSH-Desktop-Setup-1.0.0-lite.exe) | 仅引擎 + 插件市场，插件可在应用内按需安装 |
+
+两个版本内核完全相同：同一 Electron 壳、同一内置运行时；差异仅在预装插件。均可通过应用内插件市场随时增补。
+
 ## 使用
 
 1. 双击 `dist/DSH Desktop Setup 1.0.0.exe` 安装（默认装到用户目录，无需管理员权限）

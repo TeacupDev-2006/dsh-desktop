@@ -9,9 +9,9 @@
 | Variant | Installer | Notes |
 | --- | --- | --- |
 | Full | [DSH-Desktop-Setup-1.0.0-full.exe](https://github.com/TeacupDev-2006/dsh-desktop/releases/download/v1.0.0/DSH-Desktop-Setup-1.0.0-full.exe) | 11 community plugins preinstalled, works out of the box (~193 MB) |
-| Lite | [DSH-Desktop-Setup-1.0.0-lite.exe](https://github.com/TeacupDev-2006/dsh-desktop/releases/download/v1.0.0-lite/DSH-Desktop-Setup-1.0.0-lite.exe) | Engine + in-app marketplace only; install plugins on demand |
+| Lite | [DSH-Desktop-Setup-1.0.0-lite.exe](https://github.com/TeacupDev-2006/dsh-desktop/releases/download/v1.0.0-lite/DSH-Desktop-Setup-1.0.0-lite.exe) | Engine only, no preinstalled plugins (~194 MB) |
 
-Both variants share the same shell and bundled runtime — they differ only in preinstalled plugins. Plugins can be added/removed anytime from the in-app marketplace.
+Both variants share the same shell and bundled runtime — they differ only in preinstalled plugins. Lite users install plugins via the bundled CLI: `%APPDATA%\DSH Desktop\runtime\bin\dsh.cmd plugin --profile web add <plugin>` (installing `@dsh-market/plugin` adds the graphical in-app marketplace).
 
 ## Highlights
 

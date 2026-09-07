@@ -20,9 +20,9 @@
 | 版本 | 安装包 | 说明 |
 | --- | --- | --- |
 | 完整版 | [DSH-Desktop-Setup-1.0.0-full.exe](https://github.com/TeacupDev-2006/dsh-desktop/releases/download/v1.0.0/DSH-Desktop-Setup-1.0.0-full.exe) | 预装 11 个社区插件，开箱即用（约 193 MB） |
-| 精简版 | [DSH-Desktop-Setup-1.0.0-lite.exe](https://github.com/TeacupDev-2006/dsh-desktop/releases/download/v1.0.0-lite/DSH-Desktop-Setup-1.0.0-lite.exe) | 仅引擎 + 插件市场，插件可在应用内按需安装 |
+| 精简版 | [DSH-Desktop-Setup-1.0.0-lite.exe](https://github.com/TeacupDev-2006/dsh-desktop/releases/download/v1.0.0-lite/DSH-Desktop-Setup-1.0.0-lite.exe) | 仅引擎，无预装插件（约 194 MB） |
 
-两个版本内核完全相同：同一 Electron 壳、同一内置运行时；差异仅在预装插件。均可通过应用内插件市场随时增补。
+两个版本内核完全相同：同一 Electron 壳、同一内置运行时。完整版开箱即用；精简版通过内置 CLI 安装插件：`%APPDATA%\DSH Desktop\runtime\bin\dsh.cmd plugin --profile web add <插件名>`（例如先装 `@dsh-market/plugin` 即可获得应用内图形化插件市场）。
 
 ## 使用
 

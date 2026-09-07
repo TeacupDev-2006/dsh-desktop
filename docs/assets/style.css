@@ -1,0 +1,148 @@
+/* DSH Desktop 介绍站 · 共享样式（无框架、无外部依赖） */
+:root {
+  --blue: #4d6bfe;
+  --blue-soft: #7ea2ff;
+  --bg: #0d1428;
+  --bg-2: #111a33;
+  --card: #131c38;
+  --line: #26325c;
+  --text: #dfe7ff;
+  --muted: #8fa0c9;
+  --muted-2: #6d7ea8;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font-family: "Segoe UI", "Microsoft YaHei", "Hiragino Sans", system-ui, sans-serif;
+  line-height: 1.7;
+}
+a { color: var(--blue-soft); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+
+/* 顶部导航 */
+header.site {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(13, 20, 40, .92); backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+header.site .wrap { display: flex; align-items: center; gap: 14px; height: 58px; }
+header.site img.mark { width: 30px; height: 30px; border-radius: 8px; }
+header.site .name { font-weight: 700; font-size: 16px; color: #fff; }
+header.site .name small { color: var(--muted-2); font-weight: 400; margin-left: 6px; }
+header.site nav { margin-left: auto; display: flex; gap: 4px; flex-wrap: wrap; }
+header.site nav a {
+  padding: 5px 10px; border-radius: 8px; font-size: 13px; color: var(--muted);
+}
+header.site nav a:hover { color: #fff; text-decoration: none; background: #1b2547; }
+header.site nav a.cur { color: #fff; background: var(--blue); }
+
+/* Hero */
+.hero {
+  padding: 64px 0 44px; text-align: center;
+  background:
+    radial-gradient(600px 300px at 20% 0%, rgba(77, 107, 254, .28), transparent 60%),
+    radial-gradient(500px 260px at 80% 10%, rgba(126, 162, 255, .16), transparent 60%);
+}
+.hero img.icon { width: 96px; height: 96px; border-radius: 24px; box-shadow: 0 12px 40px rgba(77, 107, 254, .45); }
+.hero h1 { font-size: 34px; margin: 18px 0 6px; color: #fff; }
+.hero p.tag { font-size: 17px; color: var(--muted); margin: 0 auto; max-width: 720px; }
+.hero .badges { margin-top: 16px; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+.hero .badges span {
+  font-size: 12px; color: var(--blue-soft); background: rgba(77, 107, 254, .12);
+  border: 1px solid rgba(77, 107, 254, .45); padding: 4px 12px; border-radius: 999px;
+}
+.hero .cta { margin-top: 26px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn {
+  display: inline-block; padding: 11px 22px; border-radius: 10px; font-size: 14px; font-weight: 600;
+}
+.btn.primary { background: var(--blue); color: #fff; }
+.btn.primary:hover { background: #5d79ff; text-decoration: none; }
+.btn.ghost { border: 1px solid var(--line); color: var(--text); background: var(--bg-2); }
+.btn.ghost:hover { border-color: var(--blue); text-decoration: none; }
+
+/* 通用区块 */
+section { padding: 34px 0; }
+h2 { font-size: 24px; color: #fff; margin: 0 0 6px; }
+p.sub { color: var(--muted); margin: 0 0 22px; }
+.card {
+  background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 22px 24px;
+}
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+.grid .card h3 { margin: 0 0 8px; font-size: 16px; color: #fff; }
+.grid .card p { margin: 0; font-size: 14px; color: var(--muted); }
+.grid .card .ico { font-size: 22px; margin-bottom: 8px; }
+
+/* 截图 */
+figure.shot { margin: 0; }
+figure.shot img {
+  width: 100%; border-radius: 14px; border: 1px solid var(--line);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .45);
+}
+figure.shot figcaption { text-align: center; color: var(--muted-2); font-size: 13px; margin-top: 10px; }
+
+/* 下载卡片 */
+.dl { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+.dl .card h3 { margin: 0 0 4px; font-size: 18px; color: #fff; }
+.dl .card .ver { color: var(--muted-2); font-size: 13px; }
+.dl .card ul { margin: 12px 0 16px; padding-left: 18px; color: var(--muted); font-size: 14px; }
+.dl .card li { margin: 3px 0; }
+
+/* 表格 */
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: #fff; white-space: nowrap; }
+td { color: var(--muted); }
+td code, p code, li code {
+  background: #0d1428; border: 1px solid var(--line); border-radius: 6px;
+  padding: 1px 7px; font-size: 12.5px; color: #a8b6dd;
+  font-family: Consolas, "Courier New", monospace; word-break: break-all;
+}
+.tablewrap { overflow-x: auto; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 6px 10px; }
+
+/* 步骤 */
+ol.steps { margin: 0; padding: 0; list-style: none; counter-reset: step; }
+ol.steps li {
+  counter-increment: step; position: relative; padding: 0 0 18px 52px; color: var(--muted); font-size: 15px;
+}
+ol.steps li::before {
+  content: counter(step); position: absolute; left: 0; top: -2px;
+  width: 34px; height: 34px; border-radius: 10px; background: var(--blue);
+  color: #fff; font-weight: 700; display: flex; align-items: center; justify-content: center;
+}
+ol.steps li b { color: #fff; }
+
+/* FAQ */
+details {
+  background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+  padding: 14px 18px; margin-bottom: 10px;
+}
+details summary { cursor: pointer; color: #fff; font-weight: 600; font-size: 15px; }
+details p { color: var(--muted); font-size: 14px; margin: 10px 0 0; }
+
+/* 架构图 */
+pre.arch {
+  background: #0d1428; border: 1px solid var(--line); border-radius: 14px;
+  padding: 20px 22px; overflow-x: auto; color: #a8b6dd; font-size: 13px; line-height: 1.8;
+  font-family: Consolas, "Courier New", monospace;
+}
+
+/* 提示条 */
+.note {
+  border-left: 3px solid var(--blue); background: rgba(77, 107, 254, .08);
+  border-radius: 0 12px 12px 0; padding: 12px 16px; color: var(--muted); font-size: 14px;
+}
+
+/* 页脚 */
+footer.site {
+  border-top: 1px solid var(--line); margin-top: 30px; padding: 26px 0 40px;
+  color: var(--muted-2); font-size: 13px;
+}
+footer.site .langs { margin-bottom: 10px; }
+footer.site .langs a { margin-right: 4px; }
+
+@media (max-width: 640px) {
+  .hero h1 { font-size: 26px; }
+  header.site .name small { display: none; }
+}

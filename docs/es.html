@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DSH Desktop · Aplicación de escritorio comunitaria para DeepSeek Harness</title>
+<meta name="description" content="DSH Desktop: aplicación de escritorio Windows comunitaria para DeepSeek Harness. Runtime de Node.js integrado, instalación de un clic sin dependencias, 11 plugins comunitarios preinstalados." />
+<link rel="icon" href="assets/icon.png" />
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <img class="mark" src="assets/icon.png" alt="DSH Desktop" />
+    <span class="name">DSH Desktop <small>App comunitaria · no oficial</small></span>
+    <nav>
+      <a href="./">简体中文</a>
+      <a href="en.html">English</a>
+      <a href="ja.html">日本語</a>
+      <a class="cur" href="es.html">Español</a>
+      <a href="https://github.com/TeacupDev-2006/dsh-desktop">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <img class="icon" src="assets/icon.png" alt="Icono de DSH Desktop" />
+    <h1>DSH Desktop</h1>
+    <p class="tag">Una aplicación de escritorio Windows comunitaria para DeepSeek Harness (<code>dsh</code>): runtime de Node.js integrado, <b>cero dependencias, instalación de un clic</b>, 11 plugins comunitarios preinstalados.</p>
+    <div class="badges">
+      <span>v1.0.0</span><span>Windows 10/11 x64</span><span>Licencia MIT</span><span>Sin permisos de administrador</span><span>Datos 100% locales</span>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://github.com/TeacupDev-2006/dsh-desktop/releases/download/v1.0.0/DSH-Desktop-Setup-1.0.0-full.exe">Descargar completa (193 MB)</a>
+      <a class="btn ghost" href="https://github.com/TeacupDev-2006/dsh-desktop/releases/download/v1.0.0-lite/DSH-Desktop-Setup-1.0.0-lite.exe">Descargar lite (185 MB)</a>
+      <a class="btn ghost" href="https://github.com/TeacupDev-2006/dsh-desktop">Código fuente</a>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <section>
+    <figure class="shot">
+      <img src="assets/screenshot.png" alt="DSH Desktop ejecutándose en Windows 11: DSH Web UI con la sala de control" />
+      <figcaption>DSH Desktop en funcionamiento (VM Windows 11): icono DSH original en la barra de título y la barra de tareas; la interfaz es la DSH Web UI</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>¿Qué es esto?</h2>
+    <p class="sub">Convierte DeepSeek Harness de una herramienta de línea de comandos en una aplicación de escritorio que abres con doble clic.</p>
+    <div class="grid">
+      <div class="card"><div class="ico">📦</div><h3>Totalmente autocontenido</h3><p>Incluye Node.js 22 LTS portátil, el motor dsh y pnpm. Tu equipo <b>no necesita Node.js ni ninguna herramienta de desarrollo</b>: instala y listo.</p></div>
+      <div class="card"><div class="ico">🖱️</div><h3>Instalación de un clic</h3><p>Instalador NSIS en tu carpeta de usuario, <b>sin permisos de administrador</b>. El primer inicio extrae el runtime automáticamente (1–3 min, solo una vez); los inicios siguientes tardan unos 8 segundos.</p></div>
+      <div class="card"><div class="ico">🧩</div><h3>11 plugins preinstalados</h3><p>Mesa de trabajo de proyectos, memoria a largo plazo, mercado integrado, puente visual, búsqueda web sin clave, equipos multiagente, estadísticas de contexto, emparejamiento con el móvil, terminal UI… todo listo al instalar.</p></div>
+      <div class="card"><div class="ico">🫥</div><h3>Residente en la bandeja</h3><p>Cerrar la ventana solo minimiza a la bandeja. Desde el menú de la bandeja: reiniciar el motor, abrir la terminal TUI, ir al espacio de trabajo o a los registros.</p></div>
+      <div class="card"><div class="ico">🔒</div><h3>Datos solo locales</h3><p>Tu clave de API y todos los datos viven en <code>%APPDATA%\DSH Desktop\</code>. El motor solo escucha en loopback (127.0.0.1) con token de acceso; las operaciones de archivos del agente se limitan al espacio de trabajo que elijas.</p></div>
+      <div class="card"><div class="ico">🎨</div><h3>Marca original</h3><p>Sigue las guías de marca oficiales: la abreviatura <b>DSH</b> recomendada por el ecosistema y un monograma original "DSH_" en azul DeepSeek (#4D6BFE). No se usa el logo oficial.</p></div>
+    </div>
+  </section>
+
+  <section id="download">
+    <h2>Descargar</h2>
+    <p class="sub">Ambas variantes comparten exactamente el mismo shell y runtime: solo cambian los plugins preinstalados.</p>
+    <div class="dl">
+      <div class="card">
+        <h3>Completa <span class="ver">v1.0.0 · 193 MB</span></h3>
+        <ul>
+          <li>11 plugins comunitarios preinstalados, funciona al instante</li>
+          <li>Marketplace integrado para instalar más plugins</li>
+          <li>Incluye terminal TUI, emparejamiento con móvil y memoria a largo plazo</li>
+        </ul>
+        <a class="btn primary" href="https://github.com/TeacupDev-2006/dsh-desktop/releases/download/v1.0.0/DSH-Desktop-Setup-1.0.0-full.exe">Descargar completa</a>
+      </div>
+      <div class="card">
+        <h3>Lite <span class="ver">v1.0.0-lite · 185 MB</span></h3>
+        <ul>
+          <li>Solo el motor, sin plugins preinstalados, más ligera</li>
+          <li>Instala cualquier plugin con un comando del CLI incluido</li>
+          <li>Añadiendo <code>@dsh-market/plugin</code> obtienes el marketplace gráfico</li>
+        </ul>
+        <a class="btn ghost" href="https://github.com/TeacupDev-2006/dsh-desktop/releases/download/v1.0.0-lite/DSH-Desktop-Setup-1.0.0-lite.exe">Descargar lite</a>
+      </div>
+    </div>
+    <p class="sub" style="margin-top:14px">Consulta todas las versiones en la <a href="https://github.com/TeacupDev-2006/dsh-desktop/releases">página de Releases</a>.</p>
+  </section>
+
+  <section>
+    <h2>Funciona en 3 pasos</h2>
+    <p class="sub">Sin terminal (excepto para plugins en la versión Lite).</p>
+    <div class="card">
+      <ol class="steps">
+        <li><b>Instalar</b>: doble clic en el instalador. Se instala en tu carpeta de usuario (<code>%LOCALAPPDATA%\Programs</code>) y crea los accesos directos de "DSH Desktop" en el escritorio y el menú Inicio.</li>
+        <li><b>Primer inicio</b>: pega tu clave de API de DeepSeek (consíguela en <a href="https://platform.deepseek.com/">platform.deepseek.com</a>), mantén o cambia la carpeta de trabajo y pulsa Iniciar.</li>
+        <li><b>Usar</b>: se abre la Web UI — conversa, crea proyectos, ejecuta tareas. Cerrar la ventana solo minimiza a la bandeja; para salir del todo usa el menú de la bandeja.</li>
+      </ol>
+    </div>
+    <p class="sub" style="margin-top:14px">Instalar plugins en Lite: ejecuta <code>"%APPDATA%\DSH Desktop\runtime\bin\dsh.cmd" plugin --profile web add @dsh-market/plugin</code> y reinicia la aplicación para obtener el marketplace. Más detalles en las <a href="https://github.com/TeacupDev-2006/dsh-desktop/releases/tag/v1.0.0-lite">notas de la versión Lite</a>.</p>
+  </section>
+
+  <section>
+    <h2>Plugins preinstalados (Completa)</h2>
+    <p class="sub">Cada plugin se instala y se verifica durante la compilación; el informe queda en <code>vendor/plugin-report.json</code>.</p>
+    <div class="tablewrap">
+      <table>
+        <tr><th>Plugin</th><th>Capacidad</th><th>Estado</th></tr>
+        <tr><td><code>dsh-worktable</code> 0.3.0</td><td>Mesa de trabajo de proyectos: cajón lateral + paneles acoplables + sala de control</td><td>✓ Activo</td></tr>
+        <tr><td><code>dsh-memory-plugin</code></td><td>Memoria a largo plazo entre sesiones (herramientas <code>memory_*</code>)</td><td>✓ Activo</td></tr>
+        <tr><td><code>@dsh-market/plugin</code></td><td>Marketplace lateral para instalar más plugins</td><td>✓ Activo</td></tr>
+        <tr><td><code>@liustack/modlens</code></td><td>Puente visual</td><td>✓ Activo</td></tr>
+        <tr><td><code>@liustack/modsearch</code></td><td>Búsqueda web sin clave</td><td>✓ Activo</td></tr>
+        <tr><td><code>@nanmicoder/dsh-agent-teams</code></td><td>Colaboración multiagente</td><td>⊘ Instalado, inactivo *</td></tr>
+        <tr><td><code>dsh-context</code></td><td>Panel de estadísticas de contexto</td><td>✓ Activo</td></tr>
+        <tr><td><code>dsh-pocket</code></td><td>Emparejamiento con el móvil (LAN + PIN)</td><td>✓ Activo</td></tr>
+        <tr><td><code>dsh-tui</code></td><td>Terminal UI a pantalla completa (entrada en la bandeja)</td><td>✓ Activo</td></tr>
+        <tr><td><code>archify</code></td><td>Diagramas de arquitectura del repositorio</td><td>⊘ Instalado, inactivo *</td></tr>
+        <tr><td><code>aegis</code></td><td>Metodología de ingeniería de software</td><td>⊘ Instalado, inactivo *</td></tr>
+      </table>
+    </div>
+    <p class="sub" style="margin-top:12px">* Estos tres tienen incompatibilidades de API con el dsh 0.1.2-rc.1 incluido (bloquearían el motor), así que se instalan pero quedan inactivos por defecto. Los archivos están en su sitio; actívalos en la aplicación cuando el proyecto original los adapte — ver el <a href="https://github.com/TeacupDev-2006/dsh-desktop#readme">README del repositorio</a>.</p>
+  </section>
+
+  <section>
+    <h2>Arquitectura</h2>
+    <p class="sub">Shell de escritorio + motor integrado, con límites de proceso claros y una desinstalación limpia.</p>
+    <pre class="arch">┌─ Ventana Electron ────── carga http://127.0.0.1:&lt;puerto&gt; (DSH Web UI)
+│    · dsh-worktable: cajón lateral + paneles acoplables + sala de control
+│    · @dsh-market/plugin: marketplace (instala más plugins en línea)
+├─ Proceso principal ───── ciclo de vida / bandeja / asistente inicial / registros
+│    └─ hijo: runtime\bin\dsh-web.cmd (lanzador generado)
+└─ Motor integrado ─────── Node 22 LTS portátil + @deepseek-ai/dsh + pnpm
+     └─ carpeta de datos %APPDATA%\DSH Desktop\ (extrae vendor.zip al primer inicio)</pre>
+    <div class="note">Notas de seguridad: el motor solo escucha en loopback (127.0.0.1) con token de acceso; los enlaces externos siempre se abren en el navegador del sistema; las llamadas a procesos hijos usan validación de rutas con lista blanca.</div>
+  </section>
+
+  <section>
+    <h2>Preguntas frecuentes</h2>
+    <p class="sub">¿No encuentras tu respuesta? Pregunta en <a href="https://github.com/TeacupDev-2006/dsh-desktop/issues">Issues</a>.</p>
+    <details><summary>¿Necesito instalar Node.js antes?</summary><p>No. El runtime (Node 22 LTS + dsh + pnpm) viene dentro del instalador. No se necesita ningún entorno de desarrollo en tu equipo.</p></details>
+    <details><summary>¿Completa o Lite, cuál elijo?</summary><p>Elige la Completa para todo listo al instalar; la Lite si prefieres algo ligero y elegir plugins uno a uno. El núcleo es idéntico, y la Lite puede instalar cualquier plugin (incluido el marketplace) con el CLI incluido cuando quieras.</p></details>
+    <details><summary>¿Dónde se guarda mi clave de API? ¿Es segura?</summary><p>Localmente, en <code>%APPDATA%\DSH Desktop\dsh-home\.env</code>. Solo la usa el motor de tu máquina para llamar a la API del modelo, sin intermediarios. No compartas ese archivo; rota las claves de prueba en la plataforma de DeepSeek al terminar.</p></details>
+    <details><summary>¿Por qué archify / aegis / agent-teams están inactivos por defecto?</summary><p>Tienen incompatibilidades de API con el dsh 0.1.2-rc.1 incluido que bloquearían el motor, así que se instalan pero quedan inactivos. Los archivos están presentes; actívalos en la aplicación cuando el proyecto original los adapte.</p></details>
+    <details><summary>¿Cómo desinstalo por completo?</summary><p>Desinstala DSH Desktop desde Configuración → Aplicaciones de Windows (los accesos directos también se eliminan). La carpeta de datos <code>%APPDATA%\DSH Desktop\</code> se conserva por defecto (contiene tu clave e historial): bórrala manualmente si ya no la necesitas.</p></details>
+    <details><summary>¿Es esta la aplicación oficial de DeepSeek?</summary><p>No. DSH Desktop es un proyecto comunitario independiente, sin afiliación con DeepSeek. Usa la abreviatura DSH recomendada por el ecosistema y un icono original, siguiendo las guías de marca de DeepSeek Harness.</p></details>
+  </section>
+
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="langs">
+      Idioma / Language：
+      <a href="./">简体中文</a> ·
+      <a href="en.html">English</a> ·
+      <a href="ja.html">日本語</a> ·
+      <a href="es.html">Español</a>
+    </div>
+    <div>Licencia MIT · DeepSeek Harness (DSH) y los plugins pertenecen a sus respectivos autores · Proyecto comunitario independiente, sin afiliación con DeepSeek ·
+      <a href="https://github.com/TeacupDev-2006/dsh-desktop">GitHub</a> ·
+      <a href="https://github.com/TeacupDev-2006/dsh-desktop/releases">Releases</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

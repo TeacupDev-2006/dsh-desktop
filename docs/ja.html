@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DSH Desktop · DeepSeek Harness コミュニティデスクトップアプリ</title>
+<meta name="description" content="DSH Desktop：DeepSeek Harness 向けのコミュニティ Windows デスクトップアプリ。Node.js ランタイム内蔵、依存ゼロでワンクリックインストール、コミュニティプラグイン 11 件を同梱。" />
+<link rel="icon" href="assets/icon.png" />
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <img class="mark" src="assets/icon.png" alt="DSH Desktop" />
+    <span class="name">DSH Desktop <small>コミュニティ版 · 非公式</small></span>
+    <nav>
+      <a href="./">简体中文</a>
+      <a href="en.html">English</a>
+      <a class="cur" href="ja.html">日本語</a>
+      <a href="es.html">Español</a>
+      <a href="https://github.com/TeacupDev-2006/dsh-desktop">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <img class="icon" src="assets/icon.png" alt="DSH Desktop アイコン" />
+    <h1>DSH Desktop</h1>
+    <p class="tag">DeepSeek Harness（<code>dsh</code>）向けのコミュニティ Windows デスクトップアプリ：Node.js ランタイム内蔵で<b>依存ゼロ・ワンクリックインストール</b>、コミュニティプラグイン 11 件を同梱。</p>
+    <div class="badges">
+      <span>v1.0.0</span><span>Windows 10/11 x64</span><span>MIT License</span><span>管理者権限不要</span><span>データはローカルのみ</span>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://github.com/TeacupDev-2006/dsh-desktop/releases/download/v1.0.0/DSH-Desktop-Setup-1.0.0-full.exe">完全版をダウンロード（193 MB）</a>
+      <a class="btn ghost" href="https://github.com/TeacupDev-2006/dsh-desktop/releases/download/v1.0.0-lite/DSH-Desktop-Setup-1.0.0-lite.exe">Lite 版をダウンロード（185 MB）</a>
+      <a class="btn ghost" href="https://github.com/TeacupDev-2006/dsh-desktop">ソースコード</a>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <section>
+    <figure class="shot">
+      <img src="assets/screenshot.png" alt="DSH Desktop の実行画面（Windows 11）：DSH Web UI とコントロールルーム" />
+      <figcaption>DSH Desktop 実機画面（Windows 11 VM）：タイトルバーとタスクバーはオリジナルの DSH アイコン、UI は DSH Web UI</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>これは何？</h2>
+    <p class="sub">DeepSeek Harness を「コマンドラインツール」から「ダブルクリックで使えるデスクトップアプリ」に。</p>
+    <div class="grid">
+      <div class="card"><div class="ico">📦</div><h3>ランタイム完全内蔵</h3><p>ポータブル Node.js 22 LTS・dsh エンジン・pnpm を同梱。お使いの PC に<b>Node.js や開発環境は一切不要</b>です。</p></div>
+      <div class="card"><div class="ico">🖱️</div><h3>ワンクリックインストール</h3><p>ユーザーフォルダーへの NSIS インストールで<b>管理者権限不要</b>。初回起動時にランタイムを自動展開（1〜3 分・一度だけ）、2 回目以降は約 8 秒で起動。</p></div>
+      <div class="card"><div class="ico">🧩</div><h3>プラグイン 11 件同梱</h3><p>プロジェクトワークテーブル、長期記憶、プラグインマーケット、ビジュアルブリッジ、キー不要の Web 検索、マルチエージェント、コンテキスト統計、スマホ連携、ターミナル UI をすぐ使えます。</p></div>
+      <div class="card"><div class="ico">🫥</div><h3>トレイ常駐</h3><p>ウィンドウを閉じてもトレイに最小化。トレイメニューからエンジン再起動・TUI ターミナル起動・ワークスペースやログフォルダーを開けます。</p></div>
+      <div class="card"><div class="ico">🔒</div><h3>データはローカルのみ</h3><p>API キーと全データは <code>%APPDATA%\DSH Desktop\</code> に保存。エンジンはループバック（127.0.0.1）のみでトークン付きで待機し、エージェントのファイル操作は選択したワークスペース内に制限されます。</p></div>
+      <div class="card"><div class="ico">🎨</div><h3>オリジナルブランド</h3><p>上流のブランドガイドラインに従い、エコシステム推奨の <b>DSH</b> 略称とオリジナルの "DSH_" ワードマーク（DeepSeek ブルー #4D6BFE）を使用。公式ロゴは使用していません。</p></div>
+    </div>
+  </section>
+
+  <section id="download">
+    <h2>ダウンロード</h2>
+    <p class="sub">両バージョンともシェルとランタイムは完全に同一。違いはプリインストールされたプラグインのみです。</p>
+    <div class="dl">
+      <div class="card">
+        <h3>完全版 <span class="ver">v1.0.0 · 193 MB</span></h3>
+        <ul>
+          <li>プラグイン 11 件同梱、すぐに使える</li>
+          <li>アプリ内「プラグインマーケット」で追加インストール可能</li>
+          <li>TUI ターミナル・スマホ連携・長期記憶など全機能込み</li>
+        </ul>
+        <a class="btn primary" href="https://github.com/TeacupDev-2006/dsh-desktop/releases/download/v1.0.0/DSH-Desktop-Setup-1.0.0-full.exe">完全版をダウンロード</a>
+      </div>
+      <div class="card">
+        <h3>Lite 版 <span class="ver">v1.0.0-lite · 185 MB</span></h3>
+        <ul>
+          <li>エンジンのみ・プラグインなしで軽量</li>
+          <li>内蔵 CLI のコマンド 1 つで任意のプラグインを追加</li>
+          <li><code>@dsh-market/plugin</code> を入れれば GUI マーケットが使える</li>
+        </ul>
+        <a class="btn ghost" href="https://github.com/TeacupDev-2006/dsh-desktop/releases/download/v1.0.0-lite/DSH-Desktop-Setup-1.0.0-lite.exe">Lite 版をダウンロード</a>
+      </div>
+    </div>
+    <p class="sub" style="margin-top:14px">全バージョンは <a href="https://github.com/TeacupDev-2006/dsh-desktop/releases">Releases ページ</a> をご覧ください。</p>
+  </section>
+
+  <section>
+    <h2>3 ステップで開始</h2>
+    <p class="sub">コマンドライン不要（Lite 版へのプラグイン追加を除く）。</p>
+    <div class="card">
+      <ol class="steps">
+        <li><b>インストール</b>：セットアップをダブルクリック。ユーザーフォルダー（<code>%LOCALAPPDATA%\Programs</code>）にインストールされ、デスクトップとスタートメニューに「DSH Desktop」のショートカットが作成されます。</li>
+        <li><b>初期設定</b>：起動後に DeepSeek API キー（<a href="https://platform.deepseek.com/">platform.deepseek.com</a> で取得）を貼り付け、ワークスペースフォルダーを選んで「起動」をクリック。</li>
+        <li><b>利用開始</b>：Web UI が表示されたらチャット・プロジェクト作成・タスク実行が可能。ウィンドウを閉じるとトレイに最小化され、エンジンは起動し続けます。完全終了はトレイメニューから。</li>
+      </ol>
+    </div>
+    <p class="sub" style="margin-top:14px">Lite 版へのプラグイン追加：<code>"%APPDATA%\DSH Desktop\runtime\bin\dsh.cmd" plugin --profile web add @dsh-market/plugin</code> を実行してアプリを再起動するとマーケットが使えます。詳細は <a href="https://github.com/TeacupDev-2006/dsh-desktop/releases/tag/v1.0.0-lite">Lite 版 Release</a> を参照。</p>
+  </section>
+
+  <section>
+    <h2>同梱プラグイン一覧（完全版）</h2>
+    <p class="sub">ビルド時に 1 つずつインストールとスモークテストを実施。結果は <code>vendor/plugin-report.json</code> を参照。</p>
+    <div class="tablewrap">
+      <table>
+        <tr><th>プラグイン</th><th>機能</th><th>状態</th></tr>
+        <tr><td><code>dsh-worktable</code> 0.3.0</td><td>プロジェクトワークテーブル：サイドバードロワー + ドッキング分割 + コントロールルーム</td><td>✓ 有効</td></tr>
+        <tr><td><code>dsh-memory-plugin</code></td><td>セッション横断の長期記憶（<code>memory_*</code> ツール）</td><td>✓ 有効</td></tr>
+        <tr><td><code>@dsh-market/plugin</code></td><td>サイドバーのプラグインマーケット</td><td>✓ 有効</td></tr>
+        <tr><td><code>@liustack/modlens</code></td><td>ビジュアルブリッジ</td><td>✓ 有効</td></tr>
+        <tr><td><code>@liustack/modsearch</code></td><td>キー不要の Web 検索</td><td>✓ 有効</td></tr>
+        <tr><td><code>@nanmicoder/dsh-agent-teams</code></td><td>マルチエージェントチーム</td><td>⊘ 同梱・無効 *</td></tr>
+        <tr><td><code>dsh-context</code></td><td>コンテキスト統計パネル</td><td>✓ 有効</td></tr>
+        <tr><td><code>dsh-pocket</code></td><td>スマホ連携（LAN + PIN 保護）</td><td>✓ 有効</td></tr>
+        <tr><td><code>dsh-tui</code></td><td>フルスクリーン ターミナル UI（トレイ入口）</td><td>✓ 有効</td></tr>
+        <tr><td><code>archify</code></td><td>リポジトリ構成図の生成</td><td>⊘ 同梱・無効 *</td></tr>
+        <tr><td><code>aegis</code></td><td>ソフトウェア工学メソドロジー</td><td>⊘ 同梱・無効 *</td></tr>
+      </table>
+    </div>
+    <p class="sub" style="margin-top:12px">* この 3 つは内蔵 dsh 0.1.2-rc.1 との API 互換性問題があり、有効にするとエンジンが起動しないため、同梱のみで既定は無効です。上流の対応後、アプリ内で有効化できます。詳細は <a href="https://github.com/TeacupDev-2006/dsh-desktop#readme">リポジトリ README</a>。</p>
+  </section>
+
+  <section>
+    <h2>アーキテクチャ</h2>
+    <p class="sub">デスクトップシェル + 内蔵エンジン。プロセス境界が明確で、アンインストールもクリーンです。</p>
+    <pre class="arch">┌─ Electron ウィンドウ ─── http://127.0.0.1:&lt;port&gt;（DSH Web UI）をロード
+│    · dsh-worktable：サイドバードロワー + ドッキング分割 + コントロールルーム
+│    · @dsh-market/plugin：マーケット（追加プラグインをオンラインでインストール）
+├─ Electron メイン ─────── ライフサイクル / トレイ / 初回ウィザード / ログ
+│    └─ 子プロセス：runtime\bin\dsh-web.cmd（ビルド時生成のランチャー）
+└─ 内蔵エンジン ────────── ポータブル Node 22 LTS + @deepseek-ai/dsh + pnpm
+     └─ データディレクトリ %APPDATA%\DSH Desktop\（初回起動で vendor.zip を展開）</pre>
+    <div class="note">セキュリティ設計：エンジンはループバック（127.0.0.1）のみでトークン付き待機。外部リンクは常にシステムブラウザーで開き、子プロセス呼び出しは許可リストによるパス検証を行います。</div>
+  </section>
+
+  <section>
+    <h2>よくある質問</h2>
+    <p class="sub">解決しない場合は <a href="https://github.com/TeacupDev-2006/dsh-desktop/issues">Issues</a> へどうぞ。</p>
+    <details><summary>Node.js のインストールは必要？</summary><p>不要です。ランタイム（Node 22 LTS + dsh + pnpm）はすべてインストーラーに同梱されており、開発環境は一切不要です。</p></details>
+    <details><summary>完全版と Lite 版、どちらを選ぶ？</summary><p>すぐ使いなら完全版、軽量にしてプラグインを自分で選ぶなら Lite 版。コアは完全に同一で、Lite 版でも内蔵 CLI でいつでも任意のプラグイン（マーケット自体も）追加できます。</p></details>
+    <details><summary>API キーはどこに保存される？安全？</summary><p><code>%APPDATA%\DSH Desktop\dsh-home\.env</code> にローカル保存され、モデル API の呼び出しにのみ使われます。第三者サーバーは経由しません。ファイルの共有は避け、テスト用キーは DeepSeek プラットフォームでローテーションしてください。</p></details>
+    <details><summary>archify / aegis / agent-teams が既定で無効なのはなぜ？</summary><p>内蔵 dsh 0.1.2-rc.1 との API 互換性問題で有効化するとエンジンが起動しないため、同梱のみで既定は無効です。ファイルは配置済みで、上流の対応後にアプリ内で有効化できます。</p></details>
+    <details><summary>完全にアンインストールするには？</summary><p>Windows の「設定 → アプリ」から DSH Desktop をアンインストールしてください（ショートカットも削除されます）。データフォルダー <code>%APPDATA%\DSH Desktop\</code> は既定で残ります（API キーと履歴を含む）。不要なら手動で削除してください。</p></details>
+    <details><summary>これは DeepSeek 公式アプリ？</summary><p>いいえ。DSH Desktop は独立したコミュニティプロジェクトで、DeepSeek 公式とは関係ありません。エコシステム推奨の DSH 略称とオリジナルアイコンを使用し、DeepSeek Harness ブランドガイドラインに従っています。</p></details>
+  </section>
+
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="langs">
+      Language / 言語：
+      <a href="./">简体中文</a> ·
+      <a href="en.html">English</a> ·
+      <a href="ja.html">日本語</a> ·
+      <a href="es.html">Español</a>
+    </div>
+    <div>MIT License · DeepSeek Harness（DSH）および各プラグインの著作権はそれぞれの作者に帰属 · 独立したコミュニティプロジェクトであり DeepSeek 公式とは無関係 ·
+      <a href="https://github.com/TeacupDev-2006/dsh-desktop">GitHub</a> ·
+      <a href="https://github.com/TeacupDev-2006/dsh-desktop/releases">Releases</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

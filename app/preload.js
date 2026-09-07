@@ -8,6 +8,7 @@ contextBridge.exposeInMainWorld('dsh', {
   welcomeInit: () => ipcRenderer.invoke('welcome:init'),
   welcomeBrowse: () => ipcRenderer.invoke('welcome:browse'),
   welcomeSubmit: (data) => ipcRenderer.invoke('welcome:submit', data),
+  welcomeOpenExternal: (url) => ipcRenderer.invoke('welcome:open-external', url),
   // error
   errorInit: () => ipcRenderer.invoke('error:init'),
   errorRestart: () => ipcRenderer.invoke('error:restart'),

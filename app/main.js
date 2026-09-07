@@ -249,7 +249,7 @@ function showMain(url) {
 function showWelcome() {
   return new Promise((resolve) => {
     welcomeWin = new BrowserWindow({
-      width: 640, height: 760, resizable: false, show: false,
+      width: 560, height: 700, resizable: false, show: false,
       backgroundColor: '#0d1428', title: '欢迎使用 DSH Desktop',
       icon: WINDOW_ICON(),
       webPreferences: { preload: path.join(__dirname, 'preload.js') },
@@ -473,6 +473,13 @@ ipcMain.handle('welcome:submit', (_e, data) => {
   } catch (err) {
     return { ok: false, error: err.message };
   }
+});
+ipcMain.handle('welcome:open-external', (_e, url) => {
+  // 仅放行 https 外链（欢迎页的官网/平台链接）
+  try {
+    const u = new URL(String(url));
+    if (u.protocol === 'https:') shell.openExternal(u.href);
+  } catch { /* 忽略非法链接 */ }
 });
 ipcMain.handle('error:init', () => ({ detail: lastErrorDetail, logTail: ringLog }));
 ipcMain.handle('error:restart', () => {

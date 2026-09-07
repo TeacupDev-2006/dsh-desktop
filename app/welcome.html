@@ -2,53 +2,95 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8" />
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'" />
+<!-- 本地应用：样式内联在 <head>，需允许 unsafe-inline；脚本仍限 self -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:" />
 <title>欢迎使用 DSH Desktop</title>
 <style>
   :root { color-scheme: dark; }
   * { box-sizing: border-box; }
-  html, body { margin: 0; height: 100%; background: #0d1428; color: #dfe7ff;
-    font-family: "Segoe UI", "Microsoft YaHei", sans-serif; }
-  body { display: flex; align-items: center; justify-content: center; }
-  .card { width: 520px; background: #131c38; border: 1px solid #26325c; border-radius: 16px; padding: 34px 38px; }
-  .logo { display: flex; align-items: center; gap: 12px; margin-bottom: 6px; }
-  .logo .mark { width: 40px; height: 40px; border-radius: 10px; background: #1e2646;
-    border: 1px solid rgba(77,107,254,.55); color: #7ea2ff; font-weight: 700;
-    display: flex; align-items: center; justify-content: center; font-size: 18px; }
-  .logo h1 { font-size: 19px; margin: 0; }
-  p.sub { margin: 0 0 24px; color: #8fa0c9; font-size: 13px; }
-  label { display: block; font-size: 13px; color: #aebadd; margin: 18px 0 6px; }
+  html, body { margin: 0; height: 100%; }
+  body {
+    background:
+      radial-gradient(560px 300px at 18% 0%, rgba(77, 107, 254, .22), transparent 62%),
+      radial-gradient(480px 280px at 85% 100%, rgba(126, 162, 255, .12), transparent 60%),
+      #0d1428;
+    color: #dfe7ff;
+    font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+    display: flex; align-items: center; justify-content: center;
+    -webkit-user-select: none; user-select: none;
+  }
+  .card {
+    width: 480px; background: #131c38; border: 1px solid #26325c; border-radius: 16px;
+    padding: 28px 32px 24px; box-shadow: 0 18px 50px rgba(0, 0, 0, .45);
+  }
+  .logo { display: flex; align-items: center; gap: 12px; }
+  .logo img { width: 44px; height: 44px; border-radius: 11px; box-shadow: 0 6px 18px rgba(77, 107, 254, .4); }
+  .logo h1 { font-size: 18px; margin: 0; color: #fff; }
+  p.sub { margin: 4px 0 0 56px; color: #8fa0c9; font-size: 12.5px; }
+  hr { border: none; border-top: 1px solid #26325c; margin: 18px 0; }
+  label { display: block; font-size: 13px; color: #aebadd; margin: 0 0 6px; }
   label b { color: #dfe7ff; font-weight: 600; }
-  .hint { font-size: 12px; color: #6d7ea8; margin-top: 6px; line-height: 1.6; }
+  label .req { color: #7ea2ff; font-size: 12px; }
+  .hint { font-size: 12px; color: #6d7ea8; margin-top: 6px; line-height: 1.6; -webkit-user-select: text; user-select: text; }
   .hint a { color: #7ea2ff; text-decoration: none; }
-  input[type=password], input[type=text] { width: 100%; padding: 10px 12px; border-radius: 9px;
-    border: 1px solid #2c3a6e; background: #0d1428; color: #eaf0ff; font-size: 14px; outline: none; }
-  input:focus { border-color: #4d6bfe; }
-  .row { display: flex; gap: 10px; }
+  .hint a:hover { text-decoration: underline; }
+  .hint code {
+    background: #0d1428; border: 1px solid #26325c; border-radius: 5px;
+    padding: 0 5px; font-size: 11px; color: #a8b6dd; word-break: break-all;
+  }
+  input[type=password], input[type=text] {
+    width: 100%; padding: 10px 12px; border-radius: 9px;
+    border: 1px solid #2c3a6e; background: #0d1428; color: #eaf0ff; font-size: 14px; outline: none;
+  }
+  input:focus { border-color: #4d6bfe; box-shadow: 0 0 0 3px rgba(77, 107, 254, .18); }
+  .row { display: flex; gap: 8px; }
   .row input { flex: 1; }
-  button { padding: 10px 16px; border-radius: 9px; border: 1px solid #2c3a6e;
-    background: #1b2547; color: #dfe7ff; font-size: 13px; cursor: pointer; }
+  .row input[readonly] { color: #aebadd; }
+  button {
+    padding: 10px 14px; border-radius: 9px; border: 1px solid #2c3a6e;
+    background: #1b2547; color: #dfe7ff; font-size: 13px; cursor: pointer; white-space: nowrap;
+  }
   button:hover { border-color: #4d6bfe; }
-  .primary { width: 100%; margin-top: 26px; padding: 12px; font-size: 14px; font-weight: 600;
-    background: #4d6bfe; border: none; color: #fff; border-radius: 10px; }
+  button:active { transform: translateY(1px); }
+  .keyrow { position: relative; }
+  .keyrow input { padding-right: 58px; }
+  .keyrow .eye {
+    position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
+    padding: 5px 9px; font-size: 12px; border-radius: 7px;
+  }
+  .primary {
+    width: 100%; margin-top: 22px; padding: 12px; font-size: 14px; font-weight: 600;
+    background: #4d6bfe; border: none; color: #fff; border-radius: 10px;
+  }
   .primary:hover { background: #5d79ff; }
-  .primary[disabled] { opacity: .55; cursor: default; }
+  .primary:disabled { opacity: .55; cursor: default; }
   .err { color: #ff8f8f; font-size: 12px; min-height: 16px; margin-top: 10px; }
-  .skip { text-align: center; margin-top: 14px; font-size: 12px; color: #6d7ea8; }
+  .skip { text-align: center; margin-top: 10px; font-size: 12px; color: #6d7ea8; }
   .skip a { color: #8fa0c9; cursor: pointer; text-decoration: underline; }
+  .foot { margin-top: 18px; padding-top: 14px; border-top: 1px solid #26325c;
+    display: flex; justify-content: space-between; font-size: 11px; color: #55648f; }
+  .foot a { color: #6d7ea8; text-decoration: none; }
+  .foot a:hover { color: #8fa0c9; }
 </style>
 </head>
 <body>
   <div class="card">
-    <div class="logo"><div class="mark">&gt;_</div><h1>欢迎使用 DSH Desktop</h1></div>
+    <div class="logo">
+      <img src="../resources/icon.png" alt="DSH" />
+      <h1>欢迎使用 DSH Desktop</h1>
+    </div>
     <p class="sub">首次配置只需 30 秒 · 全部数据保存在本机</p>
+    <hr />
 
-    <label><b>DeepSeek API Key</b>（必填）</label>
-    <input type="password" id="apiKey" placeholder="sk-…" spellcheck="false" />
-    <div class="hint">仅保存在本机 <span id="envPath"></span>，用于驱动模型与联网搜索。
+    <label><b>DeepSeek API Key</b> <span class="req">必填</span></label>
+    <div class="keyrow">
+      <input type="password" id="apiKey" placeholder="sk-…" spellcheck="false" autocomplete="off" />
+      <button class="eye" id="eye" type="button" title="显示 / 隐藏">显示</button>
+    </div>
+    <div class="hint">仅保存在本机 <code id="envPath"></code>，用于驱动模型与联网搜索。
       可在 <a href="#" data-open="https://platform.deepseek.com/">platform.deepseek.com</a> 获取。</div>
 
-    <label><b>工作区目录</b>（Agent 的工作文件夹）</label>
+    <label style="margin-top:16px"><b>工作区目录</b> <span class="req">Agent 的工作文件夹</span></label>
     <div class="row">
       <input type="text" id="workspace" readonly />
       <button id="browse">浏览…</button>
@@ -58,6 +100,11 @@
     <button class="primary" id="start">启动 DSH Desktop</button>
     <div class="err" id="err"></div>
     <div class="skip">暂时没有 API Key？<a id="skip">先跳过，稍后在设置中填写</a></div>
+
+    <div class="foot">
+      <span>DSH Desktop v1.0.0 · 社区作品，与 DeepSeek 官方无关</span>
+      <a href="#" data-open="https://github.com/TeacupDev-2006/dsh-desktop">GitHub</a>
+    </div>
   </div>
 
   <script src="./welcome.js"></script>

@@ -1,5 +1,7 @@
 # DSH Desktop
 
+简体中文 · [English](README.md) · 🌐 [多语言介绍站](https://teacupdev-2006.github.io/dsh-desktop/)（含日本語 / Español）
+
 **DSH Desktop** 是为 DeepSeek Harness（`dsh`）打造的**社区**桌面端（非官方）：Windows 一键安装，**内置 Node.js 运行时，用户机器零依赖**，预装 11 个社区插件。
 
 > 命名与图标遵循 DeepSeek Harness 官方 [品牌使用规范](https://github.com/deepseek-ai/deepseek-harness/blob/master/BRAND_GUIDELINES.md)：项目名使用生态推荐的 **DSH** 缩写，图标为原创 "DSH_" 字标（DeepSeek 品牌蓝 #4D6BFE），不使用官方 logo，与官方无隶属关系。

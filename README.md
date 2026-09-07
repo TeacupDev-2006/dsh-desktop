@@ -1,5 +1,7 @@
 # DSH Desktop
 
+English · [简体中文](README.zh.md) · 🌐 [Multilingual intro site](https://teacupdev-2006.github.io/dsh-desktop/) (also 日本語 / Español)
+
 **DSH Desktop** is a **community** (unofficial) Windows desktop app for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (`dsh`): one-click install, **bundled Node.js runtime (zero dependencies on the user machine)**, with 11 community plugins preinstalled.
 
 > Naming and iconography follow the upstream [brand guidelines](https://github.com/deepseek-ai/deepseek-harness/blob/master/BRAND_GUIDELINES.md): the project uses the ecosystem-recommended **DSH** abbreviation and an original "DSH_" wordmark in DeepSeek brand blue (#4D6BFE). No official logo is used; this project is not affiliated with DeepSeek.
